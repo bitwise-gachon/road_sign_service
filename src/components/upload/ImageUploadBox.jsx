@@ -1,45 +1,47 @@
-import React, { useRef, useState } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
 const Wrapper = styled.div`
   border: 1px solid grey;
+  display: flex;
+  flex-direction: column;
 `;
 
 const UploadBox = styled.div`
   background-color: lightgrey;
-  height: 64px;
+  height: 128px;
 `;
 
-function ImageUploadBox({ id }) {
-  const [images, setImages] = useState([]);
-  const labelRef = useRef();
-  const inputRef = useRef();
-  const handleFiles = (files) => {
-    files.forEach((file) => {
-      const reader = new FileReader();
-      reader.onloadend = (event) => {
-        const { result } = event.target;
-        if (result) {
-          setImages()
-        }
-      };
-    });
-  };
+function ImageUploadBox({ id, onImageChange }) {
   return (
     <Wrapper>
-      <label htmlFor={id} ref={labelRef}>
+      <label
+        htmlFor={id}
+        onDrop={(event) => {
+          event.preventDefault();
+          event.stopPropagation();
+          const { files } = event.dataTransfer;
+          onImageChange(files);
+        }}
+        onDragOver={(event) => {
+          event.preventDefault();
+          event.stopPropagation();
+        }}
+      >
         <UploadBox>드래그 앤 드롭</UploadBox>
         <input
           type="file"
           multiple
           accept="image/*"
           id={id}
-          ref={inputRef}
           onChange={(event) => {
             event.preventDefault();
+            event.stopPropagation();
             const { files } = event.target;
+            onImageChange(files);
           }}
+          style={{ display: 'none' }}
         />
       </label>
     </Wrapper>
@@ -47,6 +49,7 @@ function ImageUploadBox({ id }) {
 }
 ImageUploadBox.propTypes = {
   id: PropTypes.string.isRequired,
+  onImageChange: PropTypes.func.isRequired,
 };
 
 export default ImageUploadBox;
