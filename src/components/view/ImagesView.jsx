@@ -3,21 +3,40 @@ import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
 const Wrapper = styled.div`
-  border: 1px solid grey;
+  margin: 0.5rem;
+`;
+
+const ImagesContainer = styled.div`
+  margin: 0.5rem;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1rem;
+`;
+
+const ImageContainer = styled.div`
+  height: 12rem;
+  border: 0.0625rem solid grey;
+  border-radius: 0.5rem;
+  padding: 0.25rem;
 `;
 
 const Image = styled.img`
-  border: 1px solid grey;
-  padding: 8px;
-  height: 128px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 `;
 
 function ImagesView({ imageUrls }) {
   return (
     <Wrapper>
-      {imageUrls.map((imageUrl, index) => (
-        <Image src={imageUrl} alt={`${index}`} />
-      ))}
+      업로드한 이미지들
+      <ImagesContainer>
+        {imageUrls.map((imageUrl, index) => (
+          <ImageContainer>
+            <Image src={imageUrl} alt={`${index}`} />
+          </ImageContainer>
+        ))}
+      </ImagesContainer>
     </Wrapper>
   );
 }
