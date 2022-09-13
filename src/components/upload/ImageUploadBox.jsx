@@ -3,12 +3,12 @@ import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
 const Wrapper = styled.div`
-  border: 0px solid grey;
+  width: 100%;
 `;
 
 const UploadBox = styled.div`
   background-color: lightgrey;
-  height: 512px;
+  height: 24rem;
   display: flex;
   justify-content: space-around;
   align-items: center;
