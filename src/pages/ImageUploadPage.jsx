@@ -18,35 +18,64 @@ const SubmitButton = styled.button`
 `;
 
 function ImageUploadPage() {
-  const [imageUrls, setImageUrls] = useState([]);
+  const [imageContents, setImageContents] = useState([]);
   const [imageUrlsCounter, setImageUrlsCounter] = useState(0);
-  const onImageChange = (files) => {
-    Array.from(files)
-      .filter((file) => file.type.match('image.*'))
-      .forEach((file, index) => {
-        const reader = new FileReader();
-        reader.onloadend = (event) => {
-          const { result } = event.target;
-          if (result) {
-            const imageUrl = { key: imageUrlsCounter + index, value: result };
-            setImageUrls((state) => [...state, imageUrl]);
-          }
+
+  const toImageContents = (files) => {
+    files.forEach((file, index) => {
+      const reader = new FileReader();
+      reader.onload = () => {
+        const { result } = reader;
+        const imageContent = {
+          key: imageUrlsCounter + index,
+          file,
+          alt: file.name,
+          url: result,
         };
-        reader.readAsDataURL(file);
-      });
+        setImageContents((state) => [...state, imageContent]);
+      };
+      reader.readAsDataURL(file);
+    });
     setImageUrlsCounter((state) => state + files.length);
   };
+
+  const onImageUpload = (files) => {
+    toImageContents(Array.from(files));
+  };
+
   const onImageUrlDelete = (deleteKey) => {
-    const newImageUrls = imageUrls.filter(
+    const newImageUrls = imageContents.filter(
       (imageUrl) => imageUrl.key !== deleteKey,
     );
-    setImageUrls(newImageUrls);
+    setImageContents(newImageUrls);
   };
+
+  const onImageSubmit = () => {
+    imageContents.forEach((imageContent) => {
+      const formData = new FormData();
+
+      formData.append('file', imageContent.file);
+      fetch('http://localhost:5000/upload-file', {
+        method: 'POST',
+        body: formData,
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          console.log(data);
+        });
+    });
+  };
+
   return (
     <Wrapper>
-      <ImageUploadBox id="Upload Box" onImageChange={onImageChange} />
-      <ImagesView imageUrls={imageUrls} onImageUrlDelete={onImageUrlDelete} />
-      <SubmitButton type="submit">제출하기</SubmitButton>
+      <ImageUploadBox id="Upload_Box" onImageUpload={onImageUpload} />
+      <ImagesView
+        imageContents={imageContents}
+        onImageUrlDelete={onImageUrlDelete}
+      />
+      <SubmitButton type="submit" onClick={onImageSubmit}>
+        제출하기
+      </SubmitButton>
     </Wrapper>
   );
 }

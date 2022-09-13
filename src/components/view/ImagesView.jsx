@@ -38,17 +38,17 @@ const DeleteButton = styled.div`
   height: 1.25rem;
 `;
 
-function ImagesView({ imageUrls, onImageUrlDelete }) {
+function ImagesView({ imageContents, onImageUrlDelete }) {
   return (
     <Wrapper>
       업로드한 이미지들
       <ImagesContainer>
-        {imageUrls.map((imageUrl) => (
-          <ImageContainer key={imageUrl.key}>
-            <Image src={imageUrl.value} alt={`${imageUrl.key} image`} />
+        {imageContents.map(({ key, url, alt }) => (
+          <ImageContainer key={key}>
+            <Image src={url} alt={alt} />
             <DeleteButton
               onClick={() => {
-                onImageUrlDelete(imageUrl.key);
+                onImageUrlDelete(key);
               }}
             />
           </ImageContainer>
@@ -58,8 +58,12 @@ function ImagesView({ imageUrls, onImageUrlDelete }) {
   );
 }
 ImagesView.propTypes = {
-  imageUrls: PropTypes.arrayOf(
-    PropTypes.shape({ key: PropTypes.number, value: PropTypes.string }),
+  imageContents: PropTypes.arrayOf(
+    PropTypes.shape({
+      key: PropTypes.number,
+      url: PropTypes.string,
+      alt: PropTypes.string,
+    }),
   ).isRequired,
   onImageUrlDelete: PropTypes.func.isRequired,
 };
