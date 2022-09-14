@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 import ImageUploadBox from '../components/upload/ImageUploadBox';
 import ImagesView from '../components/view/ImagesView';
@@ -20,6 +21,7 @@ const SubmitButton = styled.button`
 function ImageUploadPage() {
   const [imageContents, setImageContents] = useState([]);
   const [imageUrlsCounter, setImageUrlsCounter] = useState(0);
+  const navigate = useNavigate();
 
   const toImageContents = (files) => {
     files.forEach((file, index) => {
@@ -51,19 +53,20 @@ function ImageUploadPage() {
   };
 
   const onImageSubmit = () => {
-    imageContents.forEach((imageContent) => {
-      const formData = new FormData();
-
-      formData.append('file', imageContent.file);
-      fetch('http://localhost:5000/upload-file', {
-        method: 'POST',
-        body: formData,
-      })
-        .then((response) => response.json())
-        .then((data) => {
-          console.log(data);
+    const formData = new FormData();
+    console.log(imageContents[0].file);
+    formData.append('file', imageContents[0].file);
+    formData.append('accept-charset', 'UTF-8');
+    fetch('http://localhost:5000/upload-file', {
+      method: 'POST',
+      body: formData,
+    })
+      .then((response) => response.json())
+      .then((response) => {
+        navigate('/result', {
+          state: { imageContent: imageContents[0], response },
         });
-    });
+      });
   };
 
   return (
