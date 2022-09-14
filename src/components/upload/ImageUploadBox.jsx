@@ -27,9 +27,10 @@ const PopUpBox = styled.div`
   display: flex;
   justify-content: space-around;
   align-items: center;
+  z-index: 5;
 `;
 
-function ImageUploadBox({ id, onImageChange }) {
+function ImageUploadBox({ id, onImageUpload }) {
   const [isDragOver, setIsDragOver] = useState(false);
   return (
     <Wrapper>
@@ -40,7 +41,7 @@ function ImageUploadBox({ id, onImageChange }) {
           event.stopPropagation();
           setIsDragOver(false);
           const { files } = event.dataTransfer;
-          onImageChange(files);
+          onImageUpload(files);
         }}
         onDragOver={(event) => {
           event.preventDefault();
@@ -57,13 +58,13 @@ function ImageUploadBox({ id, onImageChange }) {
         <input
           type="file"
           multiple
-          accept="image/*"
+          accept="image/jpeg"
           id={id}
           onChange={(event) => {
             event.preventDefault();
             event.stopPropagation();
             const { files } = event.target;
-            onImageChange(files);
+            onImageUpload(files);
           }}
           style={{ display: 'none' }}
         />
@@ -74,7 +75,7 @@ function ImageUploadBox({ id, onImageChange }) {
 }
 ImageUploadBox.propTypes = {
   id: PropTypes.string.isRequired,
-  onImageChange: PropTypes.func.isRequired,
+  onImageUpload: PropTypes.func.isRequired,
 };
 
 export default ImageUploadBox;
