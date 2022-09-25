@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
+import PageNavigator from '../components/navigation/PageNavigator';
 import ImageUploadBox from '../components/upload/ImageUploadBox';
 import ImagesView from '../components/view/ImagesView';
 
@@ -71,6 +72,12 @@ function ImageUploadPage() {
 
   return (
     <Wrapper>
+      <PageNavigator
+        urlContents={[
+          { url: '/', title: '업로드' },
+          { url: '/result', title: '결과화면' },
+        ]}
+      />
       <ImageUploadBox id="Upload_Box" onImageUpload={onImageUpload} />
       <ImagesView
         imageContents={imageContents}
