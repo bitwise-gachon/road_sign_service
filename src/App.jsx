@@ -3,13 +3,41 @@ import './App.css';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import ImageUploadPage from './pages/ImageUploadPage';
 import ImageUploadResultPage from './pages/ImageUploadResultPage';
+import PageLayout from './pages/page_layout/PageLayout';
+import ImageListPage from './pages/ImageListPage';
+import ResultListPage from './pages/ResultListPage';
+import ResultDetailPage from './pages/ResultDetailPage';
+import ImageDetailPage from './pages/ImageDetailPage';
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route index path="/" element={<ImageUploadPage />} />
-        <Route path="/result" element={<ImageUploadResultPage />} />
+        <Route
+          index
+          path="/upload"
+          element={<PageLayout Article={ImageUploadPage} />}
+        />
+        <Route
+          path="/test"
+          element={<PageLayout Article={ImageUploadResultPage} />}
+        />
+        <Route
+          path="/images"
+          element={<PageLayout Article={ImageListPage} />}
+        />
+        <Route
+          path="/images/test"
+          element={<PageLayout Article={ImageDetailPage} />}
+        />
+        <Route
+          path="/results"
+          element={<PageLayout Article={ResultListPage} />}
+        />
+        <Route
+          path="/results/test"
+          element={<PageLayout Article={ResultDetailPage} />}
+        />
       </Routes>
     </BrowserRouter>
   );
