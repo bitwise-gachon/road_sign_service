@@ -41,7 +41,6 @@ const DeleteButton = styled.div`
 function ImagesView({ imageContents, onImageUrlDelete }) {
   return (
     <Wrapper>
-      업로드한 이미지들
       <ImagesContainer>
         {imageContents.map(({ key, url, alt }) => (
           <ImageContainer key={key}>
