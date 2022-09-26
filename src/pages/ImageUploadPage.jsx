@@ -1,16 +1,15 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
-import PageNavigator from '../components/navigation/PageNavigator';
 import ImageUploadBox from '../components/upload/ImageUploadBox';
 import ImagesView from '../components/view/ImagesView';
 
 const Wrapper = styled.div`
-  border: 1px solid grey;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  padding: 1rem;
+  width: 100%;
+  height: 100%;
 `;
 
 const SubmitButton = styled.button`
@@ -72,12 +71,6 @@ function ImageUploadPage() {
 
   return (
     <Wrapper>
-      <PageNavigator
-        urlContents={[
-          { url: '/', title: '업로드' },
-          { url: '/result', title: '결과화면' },
-        ]}
-      />
       <ImageUploadBox id="Upload_Box" onImageUpload={onImageUpload} />
       <ImagesView
         imageContents={imageContents}

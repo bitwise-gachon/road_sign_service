@@ -5,12 +5,17 @@ import styled from 'styled-components';
 
 const Wrapper = styled.div`
   background-color: skyblue;
+  width: 100%;
+  height: 100%;
 `;
 
 const PageList = styled.ul`
   list-style-type: none;
   padding: 0;
   margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
 `;
 
 const PageItem = styled.li`
@@ -24,7 +29,7 @@ function PageNavigator({ urlContents }) {
     <Wrapper>
       <PageList>
         {urlContents.map(({ url, title }) => (
-          <PageItem>
+          <PageItem key={title}>
             <div
               onClick={() => navigate(url)}
               onKeyDown={(e) => {
