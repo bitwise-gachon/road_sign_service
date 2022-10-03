@@ -1,0 +1,20 @@
+[
+  {
+    "resultId": "0",
+    "imageId": "3",
+    "inference_status": "분석완료",
+    "class_category": 129
+  },
+  {
+    "resultId": "1",
+    "imageId": "2",
+    "inference_status": "분석중",
+    "class_category": 321
+  },
+  {
+    "resultId": "2",
+    "imageId": "0",
+    "inference_status": "요청됨",
+    "class_category": 101
+  }
+]

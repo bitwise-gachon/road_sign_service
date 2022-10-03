@@ -12,6 +12,7 @@ const UploadBox = styled.div`
   display: flex;
   justify-content: space-around;
   align-items: center;
+  cursor: pointer;
 `;
 
 const PopUpBox = styled.div`

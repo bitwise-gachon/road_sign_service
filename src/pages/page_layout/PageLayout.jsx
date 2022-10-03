@@ -7,31 +7,35 @@ const Wrapper = styled.div``;
 
 const HeaderWrapper = styled.header`
   font-size: 2rem;
+  padding: 1rem;
+  background-color: #9adef7;
 `;
 
 const MainWrapper = styled.div`
+  border-bottom: 1px solid grey;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: left;
   align-items: stretch;
 `;
 
 const NavigatorWrapper = styled.nav`
-  flex-basis: 12rem;
-  min-height: 32rem;
+  min-width: 12rem;
+  min-height: 48rem;
 `;
 
 const ArticleWrapper = styled.article`
   flex-grow: 1;
+  padding: 1rem;
+  min-width: 32rem;
+  max-width: 64rem;
 `;
 
 const urlContents = [
   { title: '이미지 업로드', url: '/upload' },
   { title: '테스트', url: '/test' },
   { title: '이미지 목록', url: '/images' },
-  { title: '이미지 상세', url: '/images/test' },
   { title: '결과 목록', url: '/results' },
-  { title: '결과 상세', url: '/results/test' },
 ];
 
 function PageLayout({ Article }) {

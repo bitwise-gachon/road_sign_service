@@ -27,7 +27,7 @@ function App() {
           element={<PageLayout Article={ImageListPage} />}
         />
         <Route
-          path="/images/test"
+          path="/images/:imageId"
           element={<PageLayout Article={ImageDetailPage} />}
         />
         <Route
@@ -35,7 +35,7 @@ function App() {
           element={<PageLayout Article={ResultListPage} />}
         />
         <Route
-          path="/results/test"
+          path="/results/:resultId"
           element={<PageLayout Article={ResultDetailPage} />}
         />
       </Routes>

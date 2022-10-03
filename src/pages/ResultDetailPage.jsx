@@ -1,25 +1,11 @@
 import React from 'react';
+import { useParams } from 'react-router-dom';
 import styled from 'styled-components';
-
-const sampleImageContent = {
-  key: 0,
-  url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/A2Warrego.svg/220px-A2Warrego.svg.png',
-  alt: 'A "route confirmation" sign from wikipedia',
-};
-
-const roadSignSummaries = [
-  {
-    class_num: 129,
-    class_name: '과속방지턱',
-    image_src:
-      'https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/South_Korea_road_sign_129.svg/180px-South_Korea_road_sign_129.svg.png',
-    summary:
-      '과속방지턱, 고원식 횡단보도, 고원식 교차로가 있는 지점 전 30~200m의 도로 우측에 설치되어 있다.',
-  },
-];
+import koreaRoadSigns from '../jsonDataset/koreaRoadSigns.json';
+import sampleImageContents from '../jsonDataset/sampleImageContents.json';
+import sampleResults from '../jsonDataset/sampleResults.json';
 
 const Wrapper = styled.div`
-  padding: 1rem;
 `;
 
 const ArticleWrapper = styled.div`
@@ -37,28 +23,55 @@ const ResultWrapper = styled.div`
   padding: 1rem;
 `;
 
-const StyledImage = styled.img`
+const RequestImage = styled.img`
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3), 0px 6px 20px rgba(0, 0, 0, 0.25);
 `;
 
+const RoadSignImageContainter = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+const RoadSignImage = styled.img`
+  width: 16rem;
+`;
+
 function ResultDetailPage() {
+  const { resultId } = useParams();
+  const selectedResult = sampleResults.find(
+    (result) => result.resultId === resultId,
+  );
+  const selectedRoadSign = koreaRoadSigns.find(
+    (sign) => sign.class_category === selectedResult.class_category,
+  );
+  const result = {
+    ...selectedResult,
+    imageUrl: sampleImageContents[Number(selectedResult.imageId)].url,
+    imageAlt: sampleImageContents[Number(selectedResult.imageId)].alt,
+    roadSignName: selectedRoadSign.title,
+    roadSignImage: selectedRoadSign.image_src,
+    roadSignsummary: selectedRoadSign.summary,
+  };
+  console.log(result.roadSignImage);
   return (
     <Wrapper>
       <h1>결과 상세 페이지</h1>
       <ArticleWrapper>
         <RequestImageWrapper>
           <h3>요청한 이미지</h3>
-          <StyledImage src={sampleImageContent.url} alt={sampleImageContent.alt} />
+          <RequestImage src={result.imageUrl} alt={result.imageAlt} />
         </RequestImageWrapper>
-        {roadSignSummaries
-          .filter((x) => x.class_num === 129)
-          .map((x) => (
-            <ResultWrapper>
-              <h2>{x.class_name}</h2>
-              <img src={x.image_src} alt={x.class_name} />
-              <p>{x.summary}</p>
-            </ResultWrapper>
-          ))}
+        <ResultWrapper>
+          <h3>{result.roadSignName}</h3>
+          <RoadSignImageContainter>
+            <RoadSignImage
+              src={result.roadSignImage}
+              alt={result.roadSignName}
+            />
+          </RoadSignImageContainter>
+          <p>{result.roadSignsummary}</p>
+        </ResultWrapper>
       </ArticleWrapper>
     </Wrapper>
   );

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 import ImageUploadBox from '../components/upload/ImageUploadBox';
-import ImagesView from '../components/view/ImagesView';
+import ImagesView from '../components/view/ImageListView';
 
 const Wrapper = styled.div`
   display: flex;
@@ -16,6 +16,7 @@ const SubmitButton = styled.button`
   right: 0rem;
   height: 4rem;
   width: 8rem;
+  cursor: pointer;
 `;
 
 function ImageUploadPage() {
@@ -56,13 +57,14 @@ function ImageUploadPage() {
     const formData = new FormData();
     console.log(imageContents[0].file);
     formData.append('file', imageContents[0].file);
-    formData.append('accept-charset', 'UTF-8');
-    fetch('http://localhost:5000/upload-file', {
+    fetch('http://localhost:8080/upload', {
       method: 'POST',
+      headers: {},
       body: formData,
     })
       .then((response) => response.json())
       .then((response) => {
+        console.log(response);
         navigate('/result', {
           state: { imageContent: imageContents[0], response },
         });

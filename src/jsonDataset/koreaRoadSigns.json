@@ -1,0 +1,23 @@
+[
+  {
+    "class_category": 101,
+    "category": "Attention Sign",
+    "title": "Cross Road",
+    "image_src": "https://upload.wikimedia.org/wikipedia/commons/4/48/South_Korea_road_sign_101.svg",
+    "summary": "전방에 +자형 교차로가 있음을 알리는 것으로 도로에서 비교적 속도를 낼 수 있거나 전망이 나쁜 도로의 교차로에 설치한다."
+  },
+  {
+    "class_category": 129,
+    "category": "Attention Sign",
+    "title": "과속방지턱",
+    "image_src": "https://upload.wikimedia.org/wikipedia/commons/1/1e/South_Korea_road_sign_129.svg",
+    "summary": "과속방지턱, 고원식 횡단보도, 고원식 교차로가 있는 지점 전 30~200m의 도로 우측에 설치되어 있다."
+  },
+  {
+    "class_category": 321,
+    "category": "Mandatory",
+    "title": "보행자전용도로",
+    "image_src": "https://upload.wikimedia.org/wikipedia/commons/2/21/South_Korea_road_sign_321.svg",
+    "summary": "도로교통법 제28조(보행자전용도로의 설치)에 의해 지정된 보행자전용도로의 입구 또는 기타 필요한 구간에 해야 한다. 보행자전용도로에서 시작지점에는 구간시작(417), 끝나는 지점에는 구간끝(419)의 보조표지를 함께 설치한다. 구간 내에 교차하는 도로가 있을 때에는 교차로 부근에서 보행자전용도로 입구의 도로 우측 또는 중앙에 보행자 전용도로 지시표지를 중복하여 설치한다"
+  }
+]

@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 const Wrapper = styled.div`
-  background-color: skyblue;
+  background-color: #e7e7e7;
   width: 100%;
   height: 100%;
 `;
@@ -21,6 +21,10 @@ const PageList = styled.ul`
 const PageItem = styled.li`
   padding: 1rem;
   margin: 0;
+  :hover {
+    background-color: lightgray;
+  }
+  cursor: pointer;
 `;
 
 function PageNavigator({ urlContents }) {
@@ -29,7 +33,7 @@ function PageNavigator({ urlContents }) {
     <Wrapper>
       <PageList>
         {urlContents.map(({ url, title }) => (
-          <PageItem key={title}>
+          <PageItem key={title} onClick={() => navigate(url)}>
             <div
               onClick={() => navigate(url)}
               onKeyDown={(e) => {

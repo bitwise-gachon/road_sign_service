@@ -18,7 +18,7 @@ function ImageUploadResultPage() {
       return (
         <div>
           <Image src={location.state.imageContent.url} />
-          <p>{location.state.response.data.name}</p>
+          <p>{location.state.response.data}</p>
         </div>
       );
     }

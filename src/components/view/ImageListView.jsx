@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
+import { useNavigate } from 'react-router-dom';
 
 const Wrapper = styled.div`
   width: 100%;
@@ -26,26 +27,37 @@ const Image = styled.img`
   width: 100%;
   height: 100%;
   object-fit: cover;
+  cursor: pointer;
+
 `;
 
-const DeleteButton = styled.div`
+const DeleteButton = styled.img`
   position: absolute;
   top: 0.5rem;
   right: 0.5rem;
-  border-radius: 1rem;
-  background-color: whitesmoke;
   width: 1.25rem;
   height: 1.25rem;
 `;
 
-function ImagesView({ imageContents, onImageUrlDelete }) {
+function ImageListView({ imageContents, onImageUrlDelete }) {
+  const navigate = useNavigate();
+  const linkToImageDetailPage = (key) => {
+    navigate(key);
+  };
   return (
     <Wrapper>
       <ImagesContainer>
         {imageContents.map(({ key, url, alt }) => (
           <ImageContainer key={key}>
-            <Image src={url} alt={alt} />
+            <Image
+              src={url}
+              alt={alt}
+              onClick={() => {
+                linkToImageDetailPage(key);
+              }}
+            />
             <DeleteButton
+              src="delete.png"
               onClick={() => {
                 onImageUrlDelete(key);
               }}
@@ -56,10 +68,10 @@ function ImagesView({ imageContents, onImageUrlDelete }) {
     </Wrapper>
   );
 }
-ImagesView.propTypes = {
+ImageListView.propTypes = {
   imageContents: PropTypes.arrayOf(
     PropTypes.shape({
-      key: PropTypes.number,
+      key: PropTypes.string,
       url: PropTypes.string,
       alt: PropTypes.string,
     }),
@@ -67,4 +79,4 @@ ImagesView.propTypes = {
   onImageUrlDelete: PropTypes.func.isRequired,
 };
 
-export default ImagesView;
+export default ImageListView;
