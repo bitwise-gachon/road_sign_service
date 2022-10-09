@@ -55,8 +55,10 @@ function ImageUploadPage() {
 
   const onImageSubmit = () => {
     const formData = new FormData();
-    console.log(imageContents[0].file);
-    formData.append('file', imageContents[0].file);
+    imageContents.forEach((imageContent) => {
+      console.log(imageContent.file);
+      formData.append('photos', imageContent.file);
+    });
     fetch('http://localhost:8080/upload', {
       method: 'POST',
       headers: {},
