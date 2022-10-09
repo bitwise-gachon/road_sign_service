@@ -1,3 +1,4 @@
+/* eslint-disable operator-linebreak */
 import React from 'react';
 import { useParams } from 'react-router-dom';
 import styled from 'styled-components';
@@ -57,14 +58,14 @@ function speech(txt) {
   }
   const lang = 'ko-KR';
   const utterThis = new SpeechSynthesisUtterance(txt);
-  utterThis.onend = function (event) {
+  utterThis.onend = function () {
     console.log('end');
   };
   utterThis.onerror = function (event) {
     console.log('error', event);
   };
   let voiceFound = false;
-  for (let i = 0; i < voices.length; i++) {
+  for (let i = 0; i < voices.length; i += 1) {
     if (
       voices[i].lang.indexOf(lang) >= 0 ||
       voices[i].lang.indexOf(lang.replace('-', '_')) >= 0

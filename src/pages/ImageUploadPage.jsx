@@ -1,3 +1,4 @@
+import { Button } from '@mui/material';
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
@@ -12,13 +13,6 @@ const Wrapper = styled.div`
   height: 100%;
 `;
 
-const SubmitButton = styled.button`
-  right: 0rem;
-  height: 4rem;
-  width: 8rem;
-  cursor: pointer;
-`;
-
 function ImageUploadPage() {
   const [imageContents, setImageContents] = useState([]);
   const [imageUrlsCounter, setImageUrlsCounter] = useState(0);
@@ -26,18 +20,21 @@ function ImageUploadPage() {
 
   const toImageContents = (files) => {
     files.forEach((file, index) => {
-      const reader = new FileReader();
-      reader.onload = () => {
-        const { result } = reader;
-        const imageContent = {
-          key: imageUrlsCounter + index,
-          file,
-          alt: file.name,
-          url: result,
+      console.log(file.type);
+      if (file.type === 'image/jpeg') {
+        const reader = new FileReader();
+        reader.onload = () => {
+          const { result } = reader;
+          const imageContent = {
+            key: imageUrlsCounter + index,
+            file,
+            alt: file.name,
+            url: result,
+          };
+          setImageContents((state) => [...state, imageContent]);
         };
-        setImageContents((state) => [...state, imageContent]);
-      };
-      reader.readAsDataURL(file);
+        reader.readAsDataURL(file);
+      }
     });
     setImageUrlsCounter((state) => state + files.length);
   };
@@ -80,9 +77,9 @@ function ImageUploadPage() {
         imageContents={imageContents}
         onImageUrlDelete={onImageUrlDelete}
       />
-      <SubmitButton type="submit" onClick={onImageSubmit}>
+      <Button type="submit" onClick={onImageSubmit} variant="contained">
         제출하기
-      </SubmitButton>
+      </Button>
     </Wrapper>
   );
 }

@@ -1,23 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
+import { AppBar, Box, Typography } from '@mui/material';
+import UploadIcon from '@mui/icons-material/Upload';
+import CollectionsIcon from '@mui/icons-material/Collections';
+import ArticleIcon from '@mui/icons-material/Article';
+import BugReportIcon from '@mui/icons-material/BugReport';
 import PageNavigator from '../../components/navigation/PageNavigator';
 
 const Wrapper = styled.div``;
-
-const HeaderWrapper = styled.header`
-  font-size: 2rem;
-  padding: 1rem;
-  background-color: #9adef7;
-`;
-
-const MainWrapper = styled.div`
-  border-bottom: 1px solid grey;
-  display: flex;
-  flex-direction: row;
-  justify-content: left;
-  align-items: stretch;
-`;
 
 const NavigatorWrapper = styled.nav`
   min-width: 12rem;
@@ -32,24 +23,35 @@ const ArticleWrapper = styled.article`
 `;
 
 const urlContents = [
-  { title: '이미지 업로드', url: '/upload' },
-  { title: '테스트', url: '/test' },
-  { title: '이미지 목록', url: '/images' },
-  { title: '결과 목록', url: '/results' },
+  { title: '이미지 업로드', url: '/upload', icon: <UploadIcon /> },
+  { title: '테스트', url: '/test', icon: <BugReportIcon /> },
+  { title: '이미지 목록', url: '/images', icon: <CollectionsIcon /> },
+  { title: '결과 목록', url: '/results', icon: <ArticleIcon /> },
 ];
 
 function PageLayout({ Article }) {
   return (
     <Wrapper>
-      <HeaderWrapper>Road Sign Service</HeaderWrapper>
-      <MainWrapper>
+      <AppBar sx={{ padding: 1 }}>
+        <Typography sx={{ fontSize: '2rem' }}>Road Sign Service</Typography>
+      </AppBar>
+      <Box
+        sx={{
+          paddingTop: 7,
+          borderBottom: '1px solid grey',
+          display: 'flex',
+          flexDirection: 'row',
+          justifyContent: 'left',
+          alignItems: 'stretch',
+        }}
+      >
         <NavigatorWrapper>
           <PageNavigator urlContents={urlContents} />
         </NavigatorWrapper>
         <ArticleWrapper>
           <Article />
         </ArticleWrapper>
-      </MainWrapper>
+      </Box>
     </Wrapper>
   );
 }
