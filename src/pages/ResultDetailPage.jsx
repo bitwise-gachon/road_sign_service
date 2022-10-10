@@ -1,8 +1,10 @@
 /* eslint-disable operator-linebreak */
-import { Typography } from '@mui/material';
-import React from 'react';
+import { Button, Typography } from '@mui/material';
+import React, { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import styled from 'styled-components';
+import PlayArrowIcon from '@mui/icons-material/PlayArrow';
+import StopIcon from '@mui/icons-material/Stop';
 import koreaRoadSigns from '../jsonDataset/koreaRoadSigns.json';
 import sampleImageContents from '../jsonDataset/sampleImageContents.json';
 import sampleResults from '../jsonDataset/sampleResults.json';
@@ -25,6 +27,8 @@ const ResultWrapper = styled.div`
 `;
 
 const RequestImage = styled.img`
+  max-height: 256px;
+  max-width: 256px;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3), 0px 6px 20px rgba(0, 0, 0, 0.25);
 `;
 
@@ -87,6 +91,9 @@ function speech(txt) {
 // END: 인용한 코드: https://hoyashu.tistory.com/36
 // ================================================
 function ResultDetailPage() {
+  useEffect(() => () => {
+    window.speechSynthesis.cancel();
+  });
   const { resultId } = useParams();
   const selectedResult = sampleResults.find(
     (result) => result.resultId === resultId,
@@ -110,26 +117,45 @@ function ResultDetailPage() {
       </Typography>
       <ArticleWrapper>
         <RequestImageWrapper>
-          <h3>요청한 이미지</h3>
+          <Typography variant="h6" sx={{ paddingBottom: 1 }}>
+            요청한 이미지
+          </Typography>
           <RequestImage src={result.imageUrl} alt={result.imageAlt} />
         </RequestImageWrapper>
         <ResultWrapper>
-          <h3>{result.roadSignName}</h3>
+          <Typography variant="h6" sx={{ paddingBottom: 1 }}>
+            {result.roadSignName}
+          </Typography>
           <RoadSignImageContainter>
             <RoadSignImage
               src={result.roadSignImage}
               alt={result.roadSignName}
             />
           </RoadSignImageContainter>
-          <p>{result.roadSignsummary}</p>
-          <button
-            type="button"
+          <Typography sx={{ paddingTop: 2 }}>
+            {result.roadSignsummary}
+          </Typography>
+          <Button
             onClick={() => {
               speech(result.roadSignsummary);
             }}
+            variant="contained"
+            sx={{ marginTop: 2 }}
+            startIcon={<PlayArrowIcon />}
           >
             읽기
-          </button>
+          </Button>
+          <Button
+            onClick={() => {
+              window.speechSynthesis.cancel();
+            }}
+            variant="contained"
+            color="error"
+            sx={{ marginTop: 2, marginLeft: 2 }}
+            startIcon={<StopIcon />}
+          >
+            읽기중지
+          </Button>
         </ResultWrapper>
       </ArticleWrapper>
     </Wrapper>

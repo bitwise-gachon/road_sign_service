@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import { useNavigate } from 'react-router-dom';
-import { ImageList, ImageListItem } from '@mui/material';
+import { IconButton, ImageList, ImageListItem } from '@mui/material';
 import RemoveCircleIcon from '@mui/icons-material/RemoveCircle';
 import { red } from '@mui/material/colors';
 
@@ -31,19 +31,24 @@ function ImageListView({ imageContents, onImageUrlDelete }) {
             loading="lazy"
           />
           {onImageUrlDelete && (
-            <RemoveCircleIcon
+            <IconButton
               sx={{
                 position: 'absolute',
                 top: '0.5rem',
                 right: '0.5rem',
                 width: '1.25rem',
                 height: '1.25rem',
-                color: red[500],
               }}
               onClick={() => {
                 onImageUrlDelete(key);
               }}
-            />
+            >
+              <RemoveCircleIcon
+                sx={{
+                  color: red[500],
+                }}
+              />
+            </IconButton>
           )}
         </ImageListItem>
       ))}

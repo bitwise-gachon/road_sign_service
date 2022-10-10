@@ -2,6 +2,7 @@ import { Button } from '@mui/material';
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
+import SendIcon from '@mui/icons-material/Send';
 import ImageUploadBox from '../components/upload/ImageUploadBox';
 import ImagesView from '../components/view/ImageListView';
 
@@ -56,7 +57,7 @@ function ImageUploadPage() {
       console.log(imageContent.file);
       formData.append('photos', imageContent.file);
     });
-    fetch('http://ljlee-de.ddns.net:8080/upload', {
+    fetch('', {
       method: 'POST',
       headers: {},
       body: formData,
@@ -77,7 +78,12 @@ function ImageUploadPage() {
         imageContents={imageContents}
         onImageUrlDelete={onImageUrlDelete}
       />
-      <Button type="submit" onClick={onImageSubmit} variant="contained">
+      <Button
+        type="submit"
+        onClick={onImageSubmit}
+        variant="contained"
+        endIcon={<SendIcon />}
+      >
         제출하기
       </Button>
     </Wrapper>
