@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Typography } from '@mui/material';
 import ResultListView from '../components/view/ResultListView';
 import sampleImageContents from '../jsonDataset/sampleImageContents.json';
 import sampleResults from '../jsonDataset/sampleResults.json';
@@ -18,7 +19,7 @@ function ResultListPage() {
   }));
   return (
     <Wrapper>
-      <h1>결과 목록 페이지</h1>
+      <Typography variant="h5" gutterBottom>결과 목록 페이지</Typography>
       <ResultListView results={results} />
     </Wrapper>
   );

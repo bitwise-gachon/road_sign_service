@@ -1,4 +1,5 @@
 /* eslint-disable operator-linebreak */
+import { Typography } from '@mui/material';
 import React from 'react';
 import { useParams } from 'react-router-dom';
 import styled from 'styled-components';
@@ -104,7 +105,9 @@ function ResultDetailPage() {
   console.log(result.roadSignImage);
   return (
     <Wrapper>
-      <h1>결과 상세 페이지</h1>
+      <Typography variant="h5" gutterBottom>
+        결과 상세 페이지
+      </Typography>
       <ArticleWrapper>
         <RequestImageWrapper>
           <h3>요청한 이미지</h3>

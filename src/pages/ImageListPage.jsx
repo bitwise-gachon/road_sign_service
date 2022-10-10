@@ -1,3 +1,4 @@
+import { Typography } from '@mui/material';
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import ImagesView from '../components/view/ImageListView';
@@ -9,11 +10,10 @@ function ImageListPage() {
   const [imageContents] = useState(sampleImageContents);
   return (
     <Wrapper>
-      <h1>이미지 목록 페이지</h1>
-      <ImagesView
-        imageContents={imageContents}
-        onImageUrlDelete={undefined}
-      />
+      <Typography variant="h5" gutterBottom>
+        이미지 목록 페이지
+      </Typography>
+      <ImagesView imageContents={imageContents} onImageUrlDelete={undefined} />
     </Wrapper>
   );
 }

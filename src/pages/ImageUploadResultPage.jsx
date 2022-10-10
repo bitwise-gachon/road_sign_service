@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { useLocation, useNavigate } from 'react-router-dom';
+import { Typography } from '@mui/material';
 
 const Wrapper = styled.div``;
 
@@ -28,7 +29,9 @@ function ImageUploadResultPage() {
   };
   return (
     <Wrapper>
-      <h2>결과 화면</h2>
+      <Typography variant="h5" gutterBottom>
+        결과 화면
+      </Typography>
       {getData()}
       <button type="submit" onClick={onClick}>
         되돌아가기

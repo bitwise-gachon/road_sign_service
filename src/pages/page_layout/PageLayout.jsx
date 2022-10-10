@@ -6,6 +6,8 @@ import UploadIcon from '@mui/icons-material/Upload';
 import CollectionsIcon from '@mui/icons-material/Collections';
 import ArticleIcon from '@mui/icons-material/Article';
 import BugReportIcon from '@mui/icons-material/BugReport';
+import { grey } from '@mui/material/colors';
+import { useNavigate } from 'react-router-dom';
 import PageNavigator from '../../components/navigation/PageNavigator';
 
 const Wrapper = styled.div``;
@@ -13,13 +15,6 @@ const Wrapper = styled.div``;
 const NavigatorWrapper = styled.nav`
   min-width: 12rem;
   min-height: 48rem;
-`;
-
-const ArticleWrapper = styled.article`
-  flex-grow: 1;
-  padding: 1rem;
-  min-width: 32rem;
-  max-width: 64rem;
 `;
 
 const urlContents = [
@@ -30,14 +25,22 @@ const urlContents = [
 ];
 
 function PageLayout({ Article }) {
+  const navigate = useNavigate();
   return (
     <Wrapper>
       <AppBar sx={{ padding: 1 }}>
-        <Typography sx={{ fontSize: '2rem' }}>Road Sign Service</Typography>
+        <Typography
+          sx={{ fontSize: '2rem', cursor: 'pointer' }}
+          onClick={() => {
+            navigate('/images');
+          }}
+        >
+          Road Sign Service
+        </Typography>
       </AppBar>
       <Box
         sx={{
-          paddingTop: 7,
+          paddingTop: 8,
           borderBottom: '1px solid grey',
           display: 'flex',
           flexDirection: 'row',
@@ -48,9 +51,22 @@ function PageLayout({ Article }) {
         <NavigatorWrapper>
           <PageNavigator urlContents={urlContents} />
         </NavigatorWrapper>
-        <ArticleWrapper>
-          <Article />
-        </ArticleWrapper>
+        <Box
+          sx={{
+            flexGrow: 1,
+            padding: '1rem',
+            minWidth: '32rem',
+            backgroundColor: grey[100],
+          }}
+        >
+          <Box
+            sx={{
+              maxWidth: '64rem',
+            }}
+          >
+            <Article />
+          </Box>
+        </Box>
       </Box>
     </Wrapper>
   );

@@ -1,18 +1,10 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
+import { Box, Typography } from '@mui/material';
 
 const Wrapper = styled.div`
   width: 100%;
-`;
-
-const UploadBox = styled.div`
-  background-color: lightgrey;
-  height: 24rem;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  cursor: pointer;
 `;
 
 const PopUpBox = styled.div`
@@ -55,7 +47,21 @@ function ImageUploadBox({ id, onImageUpload }) {
           setIsDragOver(true);
         }}
       >
-        <UploadBox>여기에 파일을 드래그하거나 클릭하여 업로드하세요.</UploadBox>
+        <Box
+          sx={{
+            height: '12rem',
+            display: 'flex',
+            justifyContent: 'space-around',
+            alignItems: 'center',
+            cursor: 'pointer',
+            border: '3px dashed grey',
+            backgroundColor: 'white',
+          }}
+        >
+          <Typography>
+            여기에 파일을 드래그하거나 클릭하여 업로드하세요.
+          </Typography>
+        </Box>
         <input
           type="file"
           multiple

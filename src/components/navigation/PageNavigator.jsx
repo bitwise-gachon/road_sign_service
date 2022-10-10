@@ -1,7 +1,8 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import { List, ListItemButton, ListItemIcon } from '@mui/material';
+// eslint-disable-next-line object-curly-newline
+import { List, ListItemButton, ListItemIcon, Typography } from '@mui/material';
 
 function PageNavigator({ urlContents }) {
   const navigate = useNavigate();
@@ -13,18 +14,35 @@ function PageNavigator({ urlContents }) {
         justifyContent: 'space-evenly',
       }}
     >
-      {urlContents.map(({ url, title, icon }) => (
-        <ListItemButton
-          key={title}
-          onClick={() => navigate(url)}
-          sx={{
-            padding: 2,
-          }}
-        >
-          <ListItemIcon>{icon}</ListItemIcon>
-          {title}
-        </ListItemButton>
-      ))}
+      {urlContents.map(({ url, title, icon }) => {
+        if (url === window.location.pathname.toString()) {
+          return (
+            <ListItemButton
+              key={title}
+              onClick={() => navigate(url)}
+              sx={{
+                padding: 2,
+              }}
+              selected
+            >
+              <ListItemIcon>{icon}</ListItemIcon>
+              <Typography>{title}</Typography>
+            </ListItemButton>
+          );
+        }
+        return (
+          <ListItemButton
+            key={title}
+            onClick={() => navigate(url)}
+            sx={{
+              padding: 2,
+            }}
+          >
+            <ListItemIcon>{icon}</ListItemIcon>
+            <Typography>{title}</Typography>
+          </ListItemButton>
+        );
+      })}
     </List>
   );
 }

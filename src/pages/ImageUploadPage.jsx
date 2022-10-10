@@ -56,7 +56,7 @@ function ImageUploadPage() {
       console.log(imageContent.file);
       formData.append('photos', imageContent.file);
     });
-    fetch('http://localhost:8080/upload', {
+    fetch('http://ljlee-de.ddns.net:8080/upload', {
       method: 'POST',
       headers: {},
       body: formData,
