@@ -2,16 +2,25 @@
   {
     "resultId": "0",
     "imageId": "3",
-    "status_code": 3
+    "inference_status": 3,
+    "url": "/images/KakaoTalk_20221010_213847671.jpg",
+    "alt": "20220831_163708",
+    "class_category": 129
   },
   {
     "resultId": "1",
     "imageId": "2",
-    "inference_status": 3
+    "inference_status": 3,
+    "url": "/images/pedestrian road4.jpg",
+    "alt": "제주 해안가",
+    "class_category": 321
   },
   {
     "resultId": "2",
     "imageId": "0",
-    "inference_status": 1
+    "inference_status": 1,
+    "url": "/images/KakaoTalk_20221010_214306878.jpg",
+    "alt": "KakaoTalk_20221010_214306878",
+    "class_category": null
   }
 ]
