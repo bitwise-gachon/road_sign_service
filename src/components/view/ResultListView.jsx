@@ -45,7 +45,9 @@ function ResultListView({ results }) {
               >
                 <CardActionArea
                   onClick={() => {
-                    linkToResultDetailPage(result.resultId);
+                    if (result.inference_status === resultStatues.DONE.code) {
+                      linkToResultDetailPage(result.resultId);
+                    }
                   }}
                 >
                   <CardMedia sx={{ height: 128 }}>
@@ -55,8 +57,7 @@ function ResultListView({ results }) {
                     <TextContainer>
                       <Typography variant="h6">{result.imageAlt}</Typography>
                       <Typography>{`${result.inference_status}`}</Typography>
-                      {result.inference_status ===
-                        resultStatues.DONE.code && (
+                      {result.inference_status === resultStatues.DONE.code && (
                         <Typography>
                           {`(${result.class_category.toString()})`}
                         </Typography>
