@@ -1,0 +1,19 @@
+[
+  {
+    "resultId": "0",
+    "imageId": "3",
+    "status_code": 3,
+    "class_category": 129
+  },
+  {
+    "resultId": "1",
+    "imageId": "2",
+    "inference_status": 3,
+    "class_category": 321
+  },
+  {
+    "resultId": "2",
+    "imageId": "0",
+    "inference_status": 1
+  }
+]

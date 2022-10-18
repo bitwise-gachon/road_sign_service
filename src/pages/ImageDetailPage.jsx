@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { useParams } from 'react-router-dom';
 import { Typography } from '@mui/material';
-import sampleImageContents from '../jsonDataset/sampleImageContents.json';
+import sampleImageContents from '../jsonDataset/sampleDetailImageContents.json';
 
 const Wrapper = styled.div``;
 
@@ -15,8 +15,18 @@ function ImageDetailPage() {
       </Typography>
       {sampleImageContents
         .filter((element) => element.key === imageId)
-        .map(({ key, url, alt }) => (
-          <img key={key} src={url} alt={alt} />
+        .map((image) => (
+          <div>
+            <Typography>
+              제목:
+              {image.alt}
+            </Typography>
+            <Typography>
+              날짜:
+              {image.date}
+            </Typography>
+            <img key={image.key} src={image.url} alt={image.alt} />
+          </div>
         ))}
     </Wrapper>
   );
