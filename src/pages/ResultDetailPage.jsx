@@ -1,10 +1,11 @@
 /* eslint-disable operator-linebreak */
 import { Button, Typography } from '@mui/material';
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import styled from 'styled-components';
 import PlayArrowIcon from '@mui/icons-material/PlayArrow';
 import StopIcon from '@mui/icons-material/Stop';
+import axios from 'axios';
 import koreaRoadSigns from '../jsonDataset/koreaRoadSigns.json';
 import sampleImageContents from '../jsonDataset/sampleImageContents.json';
 import sampleResults from '../jsonDataset/sampleResults.json';
@@ -95,21 +96,53 @@ function ResultDetailPage() {
     window.speechSynthesis.cancel();
   });
   const { resultId } = useParams();
-  const selectedResult = sampleResults.find(
-    (result) => result.resultId === resultId,
-  );
-  const selectedRoadSign = koreaRoadSigns.find(
-    (sign) => sign.class_category === selectedResult.class_category,
-  );
-  const result = {
-    ...selectedResult,
-    imageUrl: sampleImageContents[Number(selectedResult.imageId)].url,
-    imageAlt: sampleImageContents[Number(selectedResult.imageId)].alt,
-    roadSignName: selectedRoadSign.title,
-    roadSignImage: selectedRoadSign.image_src,
-    roadSignsummary: selectedRoadSign.summary,
-  };
-  console.log(result.roadSignImage);
+  const [result, setResult] = useState({});
+  useEffect(() => {
+    axios
+      .post('https://bitwise.ljlee37.com:8080/requestDetail', {
+        user_id: 'test',
+        requestId: resultId,
+      })
+      .then((response) => {
+        const out = response.data.queryResult.map((request) => ({
+          resultId: request.request_id,
+          imageUrl: request.path,
+          imageAlt: request.name,
+          imageId: request.hash,
+          inference_status: request.status,
+          class_category: request.request_result,
+        }))[0];
+        const selectedRoadSign = koreaRoadSigns.find(
+          (sign) => sign.class_category === out.class_category,
+        );
+
+        const addedout = {
+          ...out,
+          roadSignName: selectedRoadSign.title,
+          roadSignImage: selectedRoadSign.image_src,
+          roadSignsummary: selectedRoadSign.summary,
+        };
+        setResult(() => addedout);
+      })
+      .catch(() => {
+        const selectedResult = sampleResults.find(
+          (request) => request.resultId === resultId,
+        );
+        const selectedRoadSign = koreaRoadSigns.find(
+          (sign) => sign.class_category === selectedResult.class_category,
+        );
+        const out = {
+          ...selectedResult,
+          imageUrl: sampleImageContents[Number(selectedResult.imageId)].url,
+          imageAlt: sampleImageContents[Number(selectedResult.imageId)].alt,
+          roadSignName: selectedRoadSign.title,
+          roadSignImage: selectedRoadSign.image_src,
+          roadSignsummary: selectedRoadSign.summary,
+        };
+        setResult(out);
+      });
+  }, []);
+
   return (
     <Wrapper>
       <Typography variant="h5" gutterBottom>

@@ -7,10 +7,11 @@ import {
   TextField,
   Typography,
 } from '@mui/material';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import SearchIcon from '@mui/icons-material/Search';
+import axios from 'axios';
 import ImagesView from '../components/view/ImageListView';
 import sampleImageContents from '../jsonDataset/sampleDetailImageContents.json';
 
@@ -45,15 +46,49 @@ const ascendingName = (a, b) => {
   return 0;
 };
 
-const ascendingId = (a, b) => a.key - b.key;
+const ascendingId = (a, b) => {
+  const isLessThan = a.key < b.key;
+  const isGreaterThan = a.key > b.key;
+  if (isLessThan) {
+    return -1;
+  }
+  if (isGreaterThan) {
+    return 1;
+  }
+  return 0;
+};
 
 const ascendingDate = (a, b) => Date.parse(a.date) - Date.parse(b.date);
 
 const descendingDate = (a, b) => Date.parse(b.date) - Date.parse(a.date);
 
 function ImageListPage() {
-  const [imageContents, setImageContents] = useState(sampleImageContents);
   const [searchedName, setSearchedName] = useState('');
+  const [images, setImages] = useState([]);
+  useEffect(() => {
+    axios
+      .post('https://bitwise.ljlee37.com:8080/imageList', {
+        user_id: 'test',
+      })
+      .then((response) => {
+        console.log(response.data);
+        const out = response.data.queryResult.map((image) => ({
+          key: image.hash,
+          alt: image.name,
+          url: image.path,
+          date: image.upload_date_time,
+        }));
+        console.log('out:', out);
+        return out;
+      })
+      .then((data) => {
+        setImages(() => data);
+      })
+      .catch(() => {
+        setImages(() => sampleImageContents);
+      });
+  }, []);
+
   return (
     <Wrapper>
       <Typography variant="h5" gutterBottom>
@@ -64,22 +99,22 @@ function ImageListPage() {
           <SortButton
             text="이름으로 정렬"
             compareFn={ascendingName}
-            setImageContents={setImageContents}
+            setImageContents={setImages}
           />
           <SortButton
             text="아이디로 정렬"
             compareFn={ascendingId}
-            setImageContents={setImageContents}
+            setImageContents={setImages}
           />
           <SortButton
             text="최신 순"
             compareFn={descendingDate}
-            setImageContents={setImageContents}
+            setImageContents={setImages}
           />
           <SortButton
             text="오래된 순"
             compareFn={ascendingDate}
-            setImageContents={setImageContents}
+            setImageContents={setImages}
           />
         </Box>
 
@@ -101,7 +136,7 @@ function ImageListPage() {
       </Box>
 
       <ImagesView
-        imageContents={imageContents.filter(({ alt }) =>
+        imageContents={images.filter(({ alt }) =>
           alt.toUpperCase().includes(searchedName.toUpperCase()),
         )}
         onImageUrlDelete={undefined}

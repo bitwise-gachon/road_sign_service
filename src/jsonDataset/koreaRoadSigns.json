@@ -7,7 +7,7 @@
     "summary": "전방에 +자형 교차로가 있음을 알리는 것으로 도로에서 비교적 속도를 낼 수 있거나 전망이 나쁜 도로의 교차로에 설치한다."
   },
   {
-    "class_category": 129,
+    "class_category": 3,
     "category": "Attention Sign",
     "title": "과속방지턱",
     "image_src": "https://upload.wikimedia.org/wikipedia/commons/1/1e/South_Korea_road_sign_129.svg",

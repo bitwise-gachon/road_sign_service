@@ -11,7 +11,6 @@ import {
   Grid,
   Typography,
 } from '@mui/material';
-import resultStatues from '../../jsonDataset/resultStatuses';
 
 const Wrapper = styled.div``;
 
@@ -45,7 +44,7 @@ function ResultListView({ results }) {
               >
                 <CardActionArea
                   onClick={() => {
-                    if (result.inference_status === resultStatues.DONE.code) {
+                    if (result.class_category !== null) {
                       linkToResultDetailPage(result.resultId);
                     }
                   }}
@@ -57,7 +56,7 @@ function ResultListView({ results }) {
                     <TextContainer>
                       <Typography variant="h6">{result.imageAlt}</Typography>
                       <Typography>{`${result.inference_status}`}</Typography>
-                      {result.inference_status === resultStatues.DONE.code && (
+                      {result.class_category !== null && (
                         <Typography>
                           {`(${result.class_category.toString()})`}
                         </Typography>
@@ -81,6 +80,7 @@ ResultListView.propTypes = {
       imageAlt: PropTypes.string.isRequired,
       inference_status: PropTypes.string.isRequired,
       class_category: PropTypes.number.isRequired,
+      date: PropTypes.string.isRequired,
     }),
   ).isRequired,
 };
