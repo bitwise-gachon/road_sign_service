@@ -55,12 +55,16 @@ function ResultListView({ results }) {
                   <CardContent>
                     <TextContainer>
                       <Typography variant="h6">{result.imageAlt}</Typography>
+
                       <Typography>{`${result.inference_status}`}</Typography>
                       {result.class_category !== null && (
                         <Typography>
                           {`(${result.class_category.toString()})`}
                         </Typography>
                       )}
+                      <Typography sx={{ color: 'gray', fontSize: '0.875rem' }}>
+                        {`${new Date(result.date).toLocaleString()}에 업로드`}
+                      </Typography>
                     </TextContainer>
                   </CardContent>
                 </CardActionArea>

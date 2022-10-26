@@ -40,7 +40,11 @@ function ResultListPage() {
       <Typography variant="h5" gutterBottom>
         결과 목록 페이지
       </Typography>
-      <ResultListView results={requests} />
+      <ResultListView
+        results={requests.sort(
+          (a, b) => Date.parse(b.date) - Date.parse(a.date),
+        )}
+      />
     </Wrapper>
   );
 }

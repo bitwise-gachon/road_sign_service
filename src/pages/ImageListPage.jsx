@@ -88,20 +88,29 @@ function ImageListPage() {
   }, []);
 
   const onImageUrlDelete = (key) => {
-    console.log(key);
-    axios
-      .delete('https://bitwise.ljlee37.com:8080/image', {
-        data: {
-          user_id: 'test',
-          imageId: key,
-        },
-      })
-      .then((response) => {
-        console.log(response);
-      })
-      .catch((err) => {
-        console.error(err);
-      });
+    if (
+      // eslint-disable-next-line no-restricted-globals
+      confirm(
+        `${
+          images.filter((image) => image.key === key)[0].alt
+        } 이미지를 삭제하시겠습니까?`,
+      )
+    ) {
+      axios
+        .delete('https://bitwise.ljlee37.com:8080/image', {
+          data: {
+            user_id: 'test',
+            imageId: key,
+          },
+        })
+        .then((response) => {
+          console.log(response);
+          setImages((state) => state.filter((item) => item.key !== key));
+        })
+        .catch((err) => {
+          console.error(err);
+        });
+    }
   };
 
   return (

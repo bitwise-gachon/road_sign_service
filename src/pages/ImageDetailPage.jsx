@@ -38,12 +38,12 @@ function ImageDetailPage() {
       {image.map((img) => (
         <div>
           <Typography>
-            제목:
+            이름:
             {img.alt}
           </Typography>
           <Typography>
             날짜:
-            {img.date}
+            {new Date(img.date).toLocaleString()}
           </Typography>
           <img key={img.key} src={img.url} alt={img.alt} />
         </div>

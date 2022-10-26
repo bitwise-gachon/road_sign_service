@@ -1,6 +1,5 @@
-import { Button } from '@mui/material';
+import { Alert, Button, CircularProgress } from '@mui/material';
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 import SendIcon from '@mui/icons-material/Send';
 import axios from 'axios';
@@ -18,7 +17,9 @@ const Wrapper = styled.div`
 function ImageUploadPage() {
   const [imageContents, setImageContents] = useState([]);
   const [imageUrlsCounter, setImageUrlsCounter] = useState(0);
-  const navigate = useNavigate();
+  const [isProgressing, setIsProgressing] = useState(false);
+  const [sended, setSended] = useState(false);
+  const [sendSuccess, setSendSuccess] = useState(false);
 
   const toImageContents = (files) => {
     files.forEach((file, index) => {
@@ -56,28 +57,39 @@ function ImageUploadPage() {
 
   const onImageSubmit = () => {
     if (imageContents.length !== 0) {
+      setIsProgressing(true);
       const formData = new FormData();
-
       imageContents.forEach((imageContent) => {
         console.log(imageContent.file);
         formData.append('photos', imageContent.file);
       });
       axios
         .post('https://bitwise.ljlee37.com:8080/upload', formData)
-        .then((response) => response.json())
         .then((response) => {
           console.log(response);
+          setSendSuccess(true);
+        })
+        .catch((err) => {
+          console.error(err);
+          setSendSuccess(false);
+        })
+        .finally(() => {
+          setSended(true);
+          setIsProgressing(false);
         });
     }
   };
-
-  return (
-    <Wrapper>
-      <ImageUploadBox id="Upload_Box" onImageUpload={onImageUpload} />
-      <ImagesView
-        imageContents={imageContents}
-        onImageUrlDelete={onImageUrlDelete}
-      />
+  const button = () => {
+    if (isProgressing) {
+      return <CircularProgress />;
+    }
+    if (sended) {
+      if (sendSuccess) {
+        return <Alert severity="success">정상적으로 업로드 되었습니다.</Alert>;
+      }
+      return <Alert severity="error">업로드하는데 문제가 발생했습니다.</Alert>;
+    }
+    return (
       <Button
         type="submit"
         onClick={onImageSubmit}
@@ -86,6 +98,16 @@ function ImageUploadPage() {
       >
         제출하기
       </Button>
+    );
+  };
+  return (
+    <Wrapper>
+      <ImageUploadBox id="Upload_Box" onImageUpload={onImageUpload} />
+      <ImagesView
+        imageContents={imageContents}
+        onImageUrlDelete={onImageUrlDelete}
+      />
+      {button()}
     </Wrapper>
   );
 }
