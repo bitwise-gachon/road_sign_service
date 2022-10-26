@@ -71,14 +71,12 @@ function ImageListPage() {
         user_id: 'test',
       })
       .then((response) => {
-        console.log(response.data);
         const out = response.data.queryResult.map((image) => ({
           key: image.hash,
-          alt: image.name,
+          alt: decodeURIComponent(image.name),
           url: image.path,
           date: image.upload_date_time,
         }));
-        console.log('out:', out);
         return out;
       })
       .then((data) => {
@@ -88,6 +86,23 @@ function ImageListPage() {
         setImages(() => sampleImageContents);
       });
   }, []);
+
+  const onImageUrlDelete = (key) => {
+    console.log(key);
+    axios
+      .delete('https://bitwise.ljlee37.com:8080/image', {
+        data: {
+          user_id: 'test',
+          imageId: key,
+        },
+      })
+      .then((response) => {
+        console.log(response);
+      })
+      .catch((err) => {
+        console.error(err);
+      });
+  };
 
   return (
     <Wrapper>
@@ -139,7 +154,7 @@ function ImageListPage() {
         imageContents={images.filter(({ alt }) =>
           alt.toUpperCase().includes(searchedName.toUpperCase()),
         )}
-        onImageUrlDelete={undefined}
+        onImageUrlDelete={onImageUrlDelete}
       />
     </Wrapper>
   );

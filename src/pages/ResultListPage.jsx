@@ -19,7 +19,7 @@ function ResultListPage() {
         const out = response.data.queryResult.map((request) => ({
           resultId: request.request_id,
           imageUrl: request.path,
-          imageAlt: request.name,
+          imageAlt: decodeURIComponent(request.name),
           inference_status: request.status,
           class_category: request.request_result,
           date: request.upload_date_time,

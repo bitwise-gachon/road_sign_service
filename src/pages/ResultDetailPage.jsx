@@ -107,7 +107,7 @@ function ResultDetailPage() {
         const out = response.data.queryResult.map((request) => ({
           resultId: request.request_id,
           imageUrl: request.path,
-          imageAlt: request.name,
+          imageAlt: decodeURIComponent(request.name),
           imageId: request.hash,
           inference_status: request.status,
           class_category: request.request_result,

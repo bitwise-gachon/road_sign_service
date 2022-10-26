@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 import SendIcon from '@mui/icons-material/Send';
+import axios from 'axios';
 import ImageUploadBox from '../components/upload/ImageUploadBox';
 import ImagesView from '../components/view/ImageListView';
 
@@ -21,17 +22,19 @@ function ImageUploadPage() {
 
   const toImageContents = (files) => {
     files.forEach((file, index) => {
-      console.log(file.type);
       if (file.type === 'image/jpeg') {
         const reader = new FileReader();
         reader.onload = () => {
           const { result } = reader;
           const imageContent = {
             key: imageUrlsCounter + index,
-            file,
+            file: new File([file], encodeURIComponent(file.name), {
+              type: file.type,
+            }),
             alt: file.name,
             url: result,
           };
+
           setImageContents((state) => [...state, imageContent]);
         };
         reader.readAsDataURL(file);
@@ -52,23 +55,20 @@ function ImageUploadPage() {
   };
 
   const onImageSubmit = () => {
-    const formData = new FormData();
-    imageContents.forEach((imageContent) => {
-      console.log(imageContent.file);
-      formData.append('photos', imageContent.file);
-    });
-    fetch('', {
-      method: 'POST',
-      headers: {},
-      body: formData,
-    })
-      .then((response) => response.json())
-      .then((response) => {
-        console.log(response);
-        navigate('/result', {
-          state: { imageContent: imageContents[0], response },
-        });
+    if (imageContents.length !== 0) {
+      const formData = new FormData();
+
+      imageContents.forEach((imageContent) => {
+        console.log(imageContent.file);
+        formData.append('photos', imageContent.file);
       });
+      axios
+        .post('https://bitwise.ljlee37.com:8080/upload', formData)
+        .then((response) => response.json())
+        .then((response) => {
+          console.log(response);
+        });
+    }
   };
 
   return (

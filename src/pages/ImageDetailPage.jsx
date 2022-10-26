@@ -19,7 +19,7 @@ function ImageDetailPage() {
       .then((response) => {
         const out = response.data.queryResult.map((img) => ({
           key: img.hash,
-          alt: img.name,
+          alt: decodeURIComponent(img.name),
           url: img.path,
           date: img.upload_date_time,
         }));
