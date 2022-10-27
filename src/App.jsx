@@ -13,6 +13,7 @@ import '@fontsource/roboto/300.css';
 import '@fontsource/roboto/400.css';
 import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
+import WelcomePage from './pages/WelcomePage';
 
 function App() {
   const fontFamily = ['Roboto', 'Arial'].join(',');
@@ -26,8 +27,8 @@ function App() {
     <BrowserRouter>
       <ThemeProvider theme={theme}>
         <Routes>
+          <Route index path="/" element={<WelcomePage />} />
           <Route
-            index
             path="/upload"
             element={<PageLayout Article={ImageUploadPage} />}
           />
