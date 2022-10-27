@@ -20,7 +20,7 @@
     "styled-components": "^5.3.5",
     "web-vitals": "^2.1.4"
   },
-  "homepage": "https://minhyukwoo.github.io/road_sign_service/",
+  "homepage": "https://MinhyukWoo.github.io/road_sign_service",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
