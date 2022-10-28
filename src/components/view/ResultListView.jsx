@@ -8,9 +8,9 @@ import {
   CardActionArea,
   CardContent,
   CardMedia,
-  Grid,
   Typography,
 } from '@mui/material';
+import koreaRoadSigns from '../../jsonDataset/koreaRoadSigns.json';
 
 const Wrapper = styled.div``;
 
@@ -34,44 +34,52 @@ function ResultListView({ results }) {
   return (
     <Wrapper>
       <ResultContainer>
-        <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
-          {results.map((result) => (
-            <Grid item xs={6}>
-              <Card
-                sx={{
-                  marginBottom: 4,
-                }}
-              >
-                <CardActionArea
-                  onClick={() => {
-                    if (result.class_category !== null) {
-                      linkToResultDetailPage(result.resultId);
-                    }
-                  }}
-                >
-                  <CardMedia sx={{ height: 128 }}>
-                    <Image src={result.imageUrl} alt={result.imageAlt} />
-                  </CardMedia>
-                  <CardContent>
-                    <TextContainer>
-                      <Typography variant="h6">{result.imageAlt}</Typography>
+        {results.map((result) => (
+          <Card
+            sx={{
+              marginBottom: 4,
+              display: 'flex',
+            }}
+          >
+            <CardActionArea
+              sx={{
+                display: 'flex',
+                flexDirection: 'row',
+                justifyContent: 'left',
+              }}
+              onClick={() => {
+                if (result.class_category !== null) {
+                  linkToResultDetailPage(result.resultId);
+                }
+              }}
+            >
+              <CardMedia sx={{ width: 128 }}>
+                <Image src={result.imageUrl} alt={result.imageAlt} />
+              </CardMedia>
+              <CardContent>
+                <TextContainer>
+                  <Typography variant="h6">{result.imageAlt}</Typography>
 
-                      <Typography>{`${result.inference_status}`}</Typography>
-                      {result.class_category !== null && (
-                        <Typography>
-                          {`(${result.class_category.toString()})`}
-                        </Typography>
-                      )}
-                      <Typography sx={{ color: 'gray', fontSize: '0.875rem' }}>
-                        {`${new Date(result.date).toLocaleString()}에 업로드`}
-                      </Typography>
-                    </TextContainer>
-                  </CardContent>
-                </CardActionArea>
-              </Card>
-            </Grid>
-          ))}
-        </Grid>
+                  <Typography>{`${result.inference_status}`}</Typography>
+                  {result.class_category !== null && (
+                    <Typography>
+                      {`${koreaRoadSigns
+                        .find(
+                          (sign) =>
+                            // eslint-disable-next-line implicit-arrow-linebreak
+                            sign.class_category === result.class_category,
+                        )
+                        .korean_title.concat(' 표지')}`}
+                    </Typography>
+                  )}
+                  <Typography sx={{ color: 'gray', fontSize: '0.875rem' }}>
+                    {`${new Date(result.date).toLocaleString()}에 업로드`}
+                  </Typography>
+                </TextContainer>
+              </CardContent>
+            </CardActionArea>
+          </Card>
+        ))}
       </ResultContainer>
     </Wrapper>
   );

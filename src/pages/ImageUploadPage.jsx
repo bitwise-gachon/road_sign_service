@@ -60,17 +60,14 @@ function ImageUploadPage() {
       setIsProgressing(true);
       const formData = new FormData();
       imageContents.forEach((imageContent) => {
-        console.log(imageContent.file);
         formData.append('photos', imageContent.file);
       });
       axios
         .post('https://bitwise.ljlee37.com:8080/upload', formData)
         .then((response) => {
-          console.log(response);
           setSendSuccess(true);
         })
         .catch((err) => {
-          console.error(err);
           setSendSuccess(false);
         })
         .finally(() => {

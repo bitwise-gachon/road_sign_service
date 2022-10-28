@@ -14,7 +14,6 @@ function ImageUploadResultPage() {
   const navigate = useNavigate();
   const getData = () => {
     if (location.state) {
-      console.log(location.state);
       return (
         <div>
           <Image src={location.state.imageContent.url} />

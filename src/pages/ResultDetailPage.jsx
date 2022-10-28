@@ -65,10 +65,8 @@ function speech(txt) {
   const lang = 'ko-KR';
   const utterThis = new SpeechSynthesisUtterance(txt);
   utterThis.onend = function () {
-    console.log('end');
   };
   utterThis.onerror = function (event) {
-    console.log('error', event);
   };
   let voiceFound = false;
   for (let i = 0; i < voices.length; i += 1) {
@@ -118,9 +116,11 @@ function ResultDetailPage() {
 
         const addedout = {
           ...out,
-          roadSignName: selectedRoadSign.title,
+          roadSignName: selectedRoadSign.korean_title,
           roadSignImage: selectedRoadSign.image_src,
           roadSignsummary: selectedRoadSign.summary,
+          roadSignCategoryName: selectedRoadSign.korean_category,
+          roadSignCategory: selectedRoadSign.class_category,
         };
         setResult(() => addedout);
       })
@@ -142,7 +142,6 @@ function ResultDetailPage() {
         setResult(out);
       });
   }, []);
-
   return (
     <Wrapper>
       <Typography variant="h5" gutterBottom>
@@ -157,7 +156,10 @@ function ResultDetailPage() {
         </RequestImageWrapper>
         <ResultWrapper>
           <Typography variant="h6" sx={{ paddingBottom: 1 }}>
-            {result.roadSignName}
+            {String().concat(
+              `${result.roadSignName}`,
+              `(${result.roadSignCategoryName}, ${result.roadSignCategory}번)`,
+            )}
           </Typography>
           <RoadSignImageContainter>
             <RoadSignImage
@@ -170,7 +172,13 @@ function ResultDetailPage() {
           </Typography>
           <Button
             onClick={() => {
-              speech(result.roadSignsummary);
+              speech(
+                String().concat(
+                  `${result.roadSignName}`,
+                  `(${result.roadSignCategoryName}, ${result.roadSignCategory}번)`,
+                  `${result.roadSignsummary}`,
+                ),
+              );
             }}
             variant="contained"
             sx={{ marginTop: 2 }}

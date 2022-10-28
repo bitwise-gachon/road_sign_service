@@ -104,11 +104,9 @@ function ImageListPage() {
           },
         })
         .then((response) => {
-          console.log(response);
           setImages((state) => state.filter((item) => item.key !== key));
         })
         .catch((err) => {
-          console.error(err);
         });
     }
   };
