@@ -103,10 +103,8 @@ function ImageListPage() {
             imageId: key,
           },
         })
-        .then((response) => {
+        .then(() => {
           setImages((state) => state.filter((item) => item.key !== key));
-        })
-        .catch((err) => {
         });
     }
   };

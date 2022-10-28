@@ -64,10 +64,10 @@ function ImageUploadPage() {
       });
       axios
         .post('https://bitwise.ljlee37.com:8080/upload', formData)
-        .then((response) => {
+        .then(() => {
           setSendSuccess(true);
         })
-        .catch((err) => {
+        .catch(() => {
           setSendSuccess(false);
         })
         .finally(() => {

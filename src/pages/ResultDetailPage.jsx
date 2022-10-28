@@ -66,7 +66,7 @@ function speech(txt) {
   const utterThis = new SpeechSynthesisUtterance(txt);
   utterThis.onend = function () {
   };
-  utterThis.onerror = function (event) {
+  utterThis.onerror = function () {
   };
   let voiceFound = false;
   for (let i = 0; i < voices.length; i += 1) {
