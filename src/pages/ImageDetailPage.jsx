@@ -45,7 +45,16 @@ function ImageDetailPage() {
             날짜:
             {new Date(img.date).toLocaleString()}
           </Typography>
-          <img key={img.key} src={img.url} alt={img.alt} />
+          <img
+            style={{
+              width: '100%',
+              height: (window.innerHeight || document.body.clientHeight) * 0.8,
+              objectFit: 'scale-down',
+            }}
+            key={img.key}
+            src={img.url}
+            alt={img.alt}
+          />
         </div>
       ))}
     </Wrapper>
