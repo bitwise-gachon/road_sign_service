@@ -1,7 +1,7 @@
 [
   {
     "index": 1,
-    "class_category": 101,
+    "class_category": "101",
     "category": "Attention Sign",
     "korean_category": "주의표지",
     "title": "Cross Road",
@@ -11,7 +11,7 @@
   },
   {
     "index": 2,
-    "class_category": 102,
+    "class_category": "102",
     "category": "Attention Sign",
     "korean_category": "주의표지",
     "title": "T type Cross Road",
@@ -21,7 +21,7 @@
   },
   {
     "index": 3,
-    "class_category": 103,
+    "class_category": "103",
     "category": "Attention Sign",
     "korean_category": "주의표지",
     "title": "Y type Cross Road",
@@ -31,7 +31,7 @@
   },
   {
     "index": 4,
-    "class_category": 104,
+    "class_category": "104",
     "category": "Attention Sign",
     "korean_category": "주의표지",
     "title": "Right Cross Road",
@@ -41,7 +41,7 @@
   },
   {
     "index": 5,
-    "class_category": 105,
+    "class_category": "105",
     "category": "Attention Sign",
     "korean_category": "주의표지",
     "title": "Left Cross Road",
@@ -51,7 +51,7 @@
   },
   {
     "index": 6,
-    "class_category": 106,
+    "class_category": "106",
     "category": "Attention Sign",
     "korean_category": "주의표지",
     "title": "Priority Road",
@@ -61,7 +61,7 @@
   },
   {
     "index": 7,
-    "class_category": 107,
+    "class_category": "107",
     "category": "Attention Sign",
     "korean_category": "주의표지",
     "title": "Right Join Road",
@@ -71,7 +71,7 @@
   },
   {
     "index": 8,
-    "class_category": 108,
+    "class_category": "108",
     "category": "Attention Sign",
     "korean_category": "주의표지",
     "title": "Left Join Road",
@@ -81,7 +81,7 @@
   },
   {
     "index": 9,
-    "class_category": 109,
+    "class_category": "109",
     "category": "Attention Sign",
     "korean_category": "주의표지",
     "title": "Rotary",
@@ -91,7 +91,7 @@
   },
   {
     "index": 10,
-    "class_category": 110,
+    "class_category": "110",
     "category": "Attention Sign",
     "korean_category": "주의표지",
     "title": "Rail-road Crossing",
@@ -101,7 +101,7 @@
   },
   {
     "index": 11,
-    "class_category": 111,
+    "class_category": "111",
     "category": "Attention Sign",
     "korean_category": "주의표지",
     "title": "Right Curved Road",
@@ -111,7 +111,7 @@
   },
   {
     "index": 12,
-    "class_category": 112,
+    "class_category": "112",
     "category": "Attention Sign",
     "korean_category": "주의표지",
     "title": "Left Curve Road",
@@ -121,7 +121,7 @@
   },
   {
     "index": 13,
-    "class_category": 113,
+    "class_category": "113",
     "category": "Attention Sign",
     "korean_category": "주의표지",
     "title": "Right Left Double Curved Road",
@@ -131,7 +131,7 @@
   },
   {
     "index": 14,
-    "class_category": 114,
+    "class_category": "114",
     "category": "Attention Sign",
     "korean_category": "주의표지",
     "title": "Left Right Double Curved Road",
@@ -141,7 +141,7 @@
   },
   {
     "index": 15,
-    "class_category": 115,
+    "class_category": "115",
     "category": "Attention Sign",
     "korean_category": "주의표지",
     "title": "Two Way Road",
@@ -151,7 +151,7 @@
   },
   {
     "index": 16,
-    "class_category": 116,
+    "class_category": "116",
     "category": "Attention Sign",
     "korean_category": "주의표지",
     "title": "Uphill Road",
@@ -161,7 +161,7 @@
   },
   {
     "index": 17,
-    "class_category": 117,
+    "class_category": "117",
     "category": "Attention Sign",
     "korean_category": "주의표지",
     "title": "Downhill Road",
@@ -171,7 +171,7 @@
   },
   {
     "index": 18,
-    "class_category": 118,
+    "class_category": "118",
     "category": "Attention Sign",
     "korean_category": "주의표지",
     "title": "Narrow Road",
@@ -181,7 +181,7 @@
   },
   {
     "index": 19,
-    "class_category": 119,
+    "class_category": "119",
     "category": "Attention Sign",
     "korean_category": "주의표지",
     "title": "Right Narrow Road",
@@ -191,7 +191,7 @@
   },
   {
     "index": 20,
-    "class_category": 120,
+    "class_category": "120",
     "category": "Attention Sign",
     "korean_category": "주의표지",
     "title": "Left Narrow Road",
@@ -201,7 +201,7 @@
   },
   {
     "index": 21,
-    "class_category": 121,
+    "class_category": "121",
     "category": "Attention Sign",
     "korean_category": "주의표지",
     "title": "Right Side Road",
@@ -211,7 +211,7 @@
   },
   {
     "index": 22,
-    "class_category": 122,
+    "class_category": "122",
     "category": "Attention Sign",
     "korean_category": "주의표지",
     "title": "Both Side Road",
@@ -221,7 +221,7 @@
   },
   {
     "index": 23,
-    "class_category": 123,
+    "class_category": "123",
     "category": "Attention Sign",
     "korean_category": "주의표지",
     "title": "Median Start",
@@ -231,7 +231,7 @@
   },
   {
     "index": 24,
-    "class_category": 124,
+    "class_category": "124",
     "category": "Attention Sign",
     "korean_category": "주의표지",
     "title": "Median End",
@@ -241,7 +241,7 @@
   },
   {
     "index": 25,
-    "class_category": 125,
+    "class_category": "125",
     "category": "Attention Sign",
     "korean_category": "주의표지",
     "title": "Signal",
@@ -251,7 +251,7 @@
   },
   {
     "index": 26,
-    "class_category": 126,
+    "class_category": "126",
     "category": "Attention Sign",
     "korean_category": "주의표지",
     "title": "Slippery Road",
@@ -261,7 +261,7 @@
   },
   {
     "index": 27,
-    "class_category": 127,
+    "class_category": "127",
     "category": "Attention Sign",
     "korean_category": "주의표지",
     "title": "Riverside Road",
@@ -271,7 +271,7 @@
   },
   {
     "index": 28,
-    "class_category": 128,
+    "class_category": "128",
     "category": "Attention Sign",
     "korean_category": "주의표지",
     "title": "Rough Road",
@@ -281,7 +281,7 @@
   },
   {
     "index": 29,
-    "class_category": 129,
+    "class_category": "129",
     "category": "Attention Sign",
     "korean_category": "주의표지",
     "title": "Speed Hump",
@@ -291,7 +291,7 @@
   },
   {
     "index": 30,
-    "class_category": 130,
+    "class_category": "130",
     "category": "Attention Sign",
     "korean_category": "주의표지",
     "title": "Falling Rock",
@@ -301,7 +301,7 @@
   },
   {
     "index": 31,
-    "class_category": 132,
+    "class_category": "132",
     "category": "Attention Sign",
     "korean_category": "주의표지",
     "title": "Crosswalk",
@@ -311,7 +311,7 @@
   },
   {
     "index": 32,
-    "class_category": 133,
+    "class_category": "133",
     "category": "Attention Sign",
     "korean_category": "주의표지",
     "title": "Children Playing",
@@ -321,7 +321,7 @@
   },
   {
     "index": 33,
-    "class_category": 134,
+    "class_category": "134",
     "category": "Attention Sign",
     "korean_category": "주의표지",
     "title": "Bicycle",
@@ -331,7 +331,7 @@
   },
   {
     "index": 34,
-    "class_category": 135,
+    "class_category": "135",
     "category": "Attention Sign",
     "korean_category": "주의표지",
     "title": "Road Work",
@@ -341,7 +341,7 @@
   },
   {
     "index": 35,
-    "class_category": 136,
+    "class_category": "136",
     "category": "Attention Sign",
     "korean_category": "주의표지",
     "title": "Airplane",
@@ -351,7 +351,7 @@
   },
   {
     "index": 36,
-    "class_category": 137,
+    "class_category": "137",
     "category": "Attention Sign",
     "korean_category": "주의표지",
     "title": "Wind",
@@ -361,7 +361,7 @@
   },
   {
     "index": 37,
-    "class_category": 138,
+    "class_category": "138",
     "category": "Attention Sign",
     "korean_category": "주의표지",
     "title": "Tunnel",
@@ -371,7 +371,7 @@
   },
   {
     "index": 38,
-    "class_category": 139,
+    "class_category": "139",
     "category": "Attention Sign",
     "korean_category": "주의표지",
     "title": "Wild Animal",
@@ -381,7 +381,7 @@
   },
   {
     "index": 39,
-    "class_category": 140,
+    "class_category": "140",
     "category": "Attention Sign",
     "korean_category": "주의표지",
     "title": "Danger",
@@ -391,7 +391,7 @@
   },
   {
     "index": 40,
-    "class_category": 141,
+    "class_category": "141",
     "category": "Attention Sign",
     "korean_category": "주의표지",
     "title": "Chronically Congested Section",
@@ -401,7 +401,7 @@
   },
   {
     "index": 41,
-    "class_category": 201,
+    "class_category": "201",
     "category": "Regulate Sign",
     "korean_category": "규제표지",
     "title": "No Pass",
@@ -411,7 +411,7 @@
   },
   {
     "index": 42,
-    "class_category": 202,
+    "class_category": "202",
     "category": "Regulate Sign",
     "korean_category": "규제표지",
     "title": "No Vehicle",
@@ -421,7 +421,7 @@
   },
   {
     "index": 43,
-    "class_category": 203,
+    "class_category": "203",
     "category": "Regulate Sign",
     "korean_category": "규제표지",
     "title": "No Truck",
@@ -431,7 +431,7 @@
   },
   {
     "index": 44,
-    "class_category": 204,
+    "class_category": "204",
     "category": "Regulate Sign",
     "korean_category": "규제표지",
     "title": "No Bus",
@@ -441,7 +441,7 @@
   },
   {
     "index": 45,
-    "class_category": 205,
+    "class_category": "205",
     "category": "Regulate Sign",
     "korean_category": "규제표지",
     "title": "No Motorized Bike",
@@ -451,7 +451,7 @@
   },
   {
     "index": 46,
-    "class_category": 206,
+    "class_category": "206",
     "category": "Regulate Sign",
     "korean_category": "규제표지",
     "title": "No Vehicle and Motorized Bike",
@@ -461,7 +461,7 @@
   },
   {
     "index": 47,
-    "class_category": 207,
+    "class_category": "207",
     "category": "Regulate Sign",
     "korean_category": "규제표지",
     "title": "No Cultivator,Tractor and Cart",
@@ -471,7 +471,7 @@
   },
   {
     "index": 48,
-    "class_category": 210,
+    "class_category": "210",
     "category": "Regulate Sign",
     "korean_category": "규제표지",
     "title": "No Bicycle",
@@ -481,7 +481,7 @@
   },
   {
     "index": 49,
-    "class_category": 211,
+    "class_category": "211",
     "category": "Regulate Sign",
     "korean_category": "규제표지",
     "title": "No Entry",
@@ -491,7 +491,7 @@
   },
   {
     "index": 50,
-    "class_category": 212,
+    "class_category": "212",
     "category": "Regulate Sign",
     "korean_category": "규제표지",
     "title": "No Straight",
@@ -501,7 +501,7 @@
   },
   {
     "index": 51,
-    "class_category": 213,
+    "class_category": "213",
     "category": "Regulate Sign",
     "korean_category": "규제표지",
     "title": "No Right Turn",
@@ -511,7 +511,7 @@
   },
   {
     "index": 52,
-    "class_category": 214,
+    "class_category": "214",
     "category": "Regulate Sign",
     "korean_category": "규제표지",
     "title": "No Left Turn",
@@ -521,7 +521,7 @@
   },
   {
     "index": 53,
-    "class_category": 216,
+    "class_category": "216",
     "category": "Regulate Sign",
     "korean_category": "규제표지",
     "title": "No U-turn",
@@ -531,7 +531,7 @@
   },
   {
     "index": 54,
-    "class_category": 217,
+    "class_category": "217",
     "category": "Regulate Sign",
     "korean_category": "규제표지",
     "title": "No Passing",
@@ -541,7 +541,7 @@
   },
   {
     "index": 55,
-    "class_category": 218,
+    "class_category": "218",
     "category": "Regulate Sign",
     "korean_category": "규제표지",
     "title": "No Stop, Parking",
@@ -551,7 +551,7 @@
   },
   {
     "index": 56,
-    "class_category": 219,
+    "class_category": "219",
     "category": "Regulate Sign",
     "korean_category": "규제표지",
     "title": "No Parking",
@@ -561,7 +561,7 @@
   },
   {
     "index": 57,
-    "class_category": 220,
+    "class_category": "220",
     "category": "Regulate Sign",
     "korean_category": "규제표지",
     "title": "Weight Limit",
@@ -571,7 +571,7 @@
   },
   {
     "index": 58,
-    "class_category": 221,
+    "class_category": "221",
     "category": "Regulate Sign",
     "korean_category": "규제표지",
     "title": "Height Limit",
@@ -581,7 +581,7 @@
   },
   {
     "index": 59,
-    "class_category": 222,
+    "class_category": "222",
     "category": "Regulate Sign",
     "korean_category": "규제표지",
     "title": "Width Limit",
@@ -591,7 +591,7 @@
   },
   {
     "index": 60,
-    "class_category": 223,
+    "class_category": "223",
     "category": "Regulate Sign",
     "korean_category": "규제표지",
     "title": "Distance Between Cars",
@@ -601,7 +601,7 @@
   },
   {
     "index": 61,
-    "class_category": 224,
+    "class_category": "224",
     "category": "Regulate Sign",
     "korean_category": "규제표지",
     "title": "Maximum Speed Limit",
@@ -611,7 +611,7 @@
   },
   {
     "index": 62,
-    "class_category": 225,
+    "class_category": "225",
     "category": "Regulate Sign",
     "korean_category": "규제표지",
     "title": "Minimum Speed Limit",
@@ -621,7 +621,7 @@
   },
   {
     "index": 63,
-    "class_category": 226,
+    "class_category": "226",
     "category": "Regulate Sign",
     "korean_category": "규제표지",
     "title": "Slow",
@@ -631,7 +631,7 @@
   },
   {
     "index": 64,
-    "class_category": 227,
+    "class_category": "227",
     "category": "Regulate Sign",
     "korean_category": "규제표지",
     "title": "Stop",
@@ -641,7 +641,7 @@
   },
   {
     "index": 65,
-    "class_category": 228,
+    "class_category": "228",
     "category": "Regulate Sign",
     "korean_category": "규제표지",
     "title": "Yield",
@@ -651,7 +651,7 @@
   },
   {
     "index": 66,
-    "class_category": 230,
+    "class_category": "230",
     "category": "Regulate Sign",
     "korean_category": "규제표지",
     "title": "No Walk",
@@ -661,7 +661,7 @@
   },
   {
     "index": 67,
-    "class_category": 231,
+    "class_category": "231",
     "category": "Regulate Sign",
     "korean_category": "규제표지",
     "title": "No Dangerous Cargo",
@@ -671,7 +671,7 @@
   },
   {
     "index": 68,
-    "class_category": 301,
+    "class_category": "301",
     "category": "Mandatory Sign",
     "korean_category": "지시표지",
     "title": "Driveway",
@@ -681,7 +681,7 @@
   },
   {
     "index": 69,
-    "class_category": 302,
+    "class_category": "302",
     "category": "Mandatory Sign",
     "korean_category": "지시표지",
     "title": "Bicycleway",
@@ -691,7 +691,7 @@
   },
   {
     "index": 70,
-    "class_category": 303,
+    "class_category": "303",
     "category": "Mandatory Sign",
     "korean_category": "지시표지",
     "title": "Bicycle Pedestrian Road",
@@ -701,7 +701,7 @@
   },
   {
     "index": 71,
-    "class_category": 304,
+    "class_category": "304",
     "category": "Mandatory Sign",
     "korean_category": "지시표지",
     "title": "Rotary",
@@ -711,7 +711,7 @@
   },
   {
     "index": 72,
-    "class_category": 305,
+    "class_category": "305",
     "category": "Mandatory Sign",
     "korean_category": "지시표지",
     "title": "Straight",
@@ -721,7 +721,7 @@
   },
   {
     "index": 73,
-    "class_category": 306,
+    "class_category": "306",
     "category": "Mandatory Sign",
     "korean_category": "지시표지",
     "title": "Turn Right",
@@ -731,7 +731,7 @@
   },
   {
     "index": 74,
-    "class_category": 307,
+    "class_category": "307",
     "category": "Mandatory Sign",
     "korean_category": "지시표지",
     "title": "Turn Left",
@@ -741,7 +741,7 @@
   },
   {
     "index": 75,
-    "class_category": 308,
+    "class_category": "308",
     "category": "Mandatory Sign",
     "korean_category": "지시표지",
     "title": "Straight and Turn Right",
@@ -751,7 +751,7 @@
   },
   {
     "index": 76,
-    "class_category": 309,
+    "class_category": "309",
     "category": "Mandatory Sign",
     "korean_category": "지시표지",
     "title": "Straight and Turn Left",
@@ -761,7 +761,7 @@
   },
   {
     "index": 77,
-    "class_category": 310,
+    "class_category": "310",
     "category": "Mandatory Sign",
     "korean_category": "지시표지",
     "title": "Turn Left and Right",
@@ -771,7 +771,7 @@
   },
   {
     "index": 78,
-    "class_category": 311,
+    "class_category": "311",
     "category": "Mandatory Sign",
     "korean_category": "지시표지",
     "title": "U Turn",
@@ -781,7 +781,7 @@
   },
   {
     "index": 79,
-    "class_category": 312,
+    "class_category": "312",
     "category": "Mandatory Sign",
     "korean_category": "지시표지",
     "title": "Both Side Road",
@@ -791,7 +791,7 @@
   },
   {
     "index": 80,
-    "class_category": 313,
+    "class_category": "313",
     "category": "Mandatory Sign",
     "korean_category": "지시표지",
     "title": "Right Side Road",
@@ -801,7 +801,7 @@
   },
   {
     "index": 81,
-    "class_category": 314,
+    "class_category": "314",
     "category": "Mandatory Sign",
     "korean_category": "지시표지",
     "title": "Left Side Road",
@@ -811,7 +811,7 @@
   },
   {
     "index": 82,
-    "class_category": 315,
+    "class_category": "315",
     "category": "Mandatory Sign",
     "korean_category": "지시표지",
     "title": "Direction Section",
@@ -821,7 +821,7 @@
   },
   {
     "index": 83,
-    "class_category": 316,
+    "class_category": "316",
     "category": "Mandatory Sign",
     "korean_category": "지시표지",
     "title": "Detour",
@@ -831,7 +831,7 @@
   },
   {
     "index": 84,
-    "class_category": 317,
+    "class_category": "317",
     "category": "Mandatory Sign",
     "korean_category": "지시표지",
     "title": "Bicycle and Pedestrian Direction Section",
@@ -841,7 +841,7 @@
   },
   {
     "index": 85,
-    "class_category": 318,
+    "class_category": "318",
     "category": "Mandatory Sign",
     "korean_category": "지시표지",
     "title": "Bicycle Only",
@@ -851,7 +851,7 @@
   },
   {
     "index": 86,
-    "class_category": 319,
+    "class_category": "319",
     "category": "Mandatory Sign",
     "korean_category": "지시표지",
     "title": "Parking Area",
@@ -861,7 +861,7 @@
   },
   {
     "index": 87,
-    "class_category": 320,
+    "class_category": "320",
     "category": "Mandatory Sign",
     "korean_category": "지시표지",
     "title": "Bicycle Parking Area",
@@ -871,7 +871,7 @@
   },
   {
     "index": 88,
-    "class_category": 321,
+    "class_category": "321",
     "category": "Mandatory Sign",
     "korean_category": "지시표지",
     "title": "Pedestrian Only",
@@ -881,7 +881,7 @@
   },
   {
     "index": 89,
-    "class_category": 322,
+    "class_category": "322",
     "category": "Mandatory Sign",
     "korean_category": "지시표지",
     "title": "Crosswalk",
@@ -891,7 +891,7 @@
   },
   {
     "index": 90,
-    "class_category": 323,
+    "class_category": "323",
     "category": "Mandatory Sign",
     "korean_category": "지시표지",
     "title": "Senior Protection",
@@ -901,7 +901,7 @@
   },
   {
     "index": 91,
-    "class_category": 324,
+    "class_category": "324",
     "category": "Mandatory Sign",
     "korean_category": "지시표지",
     "title": "Children Playing",
@@ -911,7 +911,7 @@
   },
   {
     "index": 92,
-    "class_category": 325,
+    "class_category": "325",
     "category": "Mandatory Sign",
     "korean_category": "지시표지",
     "title": "Bicycle Cross",
@@ -921,7 +921,7 @@
   },
   {
     "index": 93,
-    "class_category": 326,
+    "class_category": "326",
     "category": "Mandatory Sign",
     "korean_category": "지시표지",
     "title": "One Way",
@@ -931,7 +931,7 @@
   },
   {
     "index": 94,
-    "class_category": 327,
+    "class_category": "327",
     "category": "Mandatory Sign",
     "korean_category": "지시표지",
     "title": "One Way Left",
@@ -941,7 +941,7 @@
   },
   {
     "index": 95,
-    "class_category": 328,
+    "class_category": "328",
     "category": "Mandatory Sign",
     "korean_category": "지시표지",
     "title": "One Way Straight",
@@ -951,7 +951,7 @@
   },
   {
     "index": 96,
-    "class_category": 329,
+    "class_category": "329",
     "category": "Mandatory Sign",
     "korean_category": "지시표지",
     "title": "Turn Left with Caution",
@@ -961,7 +961,7 @@
   },
   {
     "index": 97,
-    "class_category": 330,
+    "class_category": "330",
     "category": "Mandatory Sign",
     "korean_category": "지시표지",
     "title": "Bus Only",
@@ -971,7 +971,7 @@
   },
   {
     "index": 98,
-    "class_category": 331,
+    "class_category": "331",
     "category": "Mandatory Sign",
     "korean_category": "지시표지",
     "title": "HOV Lane",
@@ -981,7 +981,7 @@
   },
   {
     "index": 99,
-    "class_category": 332,
+    "class_category": "332",
     "category": "Mandatory Sign",
     "korean_category": "지시표지",
     "title": "First Pass",
@@ -991,7 +991,7 @@
   },
   {
     "index": 100,
-    "class_category": 333,
+    "class_category": "333",
     "category": "Mandatory Sign",
     "korean_category": "지시표지",
     "title": "Allow Ride Side-By-Side (Bicycle)",
@@ -1001,12 +1001,62 @@
   },
   {
     "index": 101,
-    "class_category": 334,
+    "class_category": "334",
     "category": "Mandatory Sign",
     "korean_category": "지시표지",
     "title": "Urban",
     "korean_title": "도시부",
     "image_src": "https://upload.wikimedia.org/wikipedia/commons/6/6f/South_Korea_road_sign_334.svg",
     "summary": "도시부란 국토의 계획 및 이용에 관한 법률 제36조 제1항 제1호에 따른 주거지역 · 상업지역 · 공업지역을 의미한다. 도시부가 시작되는 지점과 그 밖에 필요한 구간의 도로 우측에 설치한다."
+  },
+  {
+    "index": 102,
+    "class_category": "324-2",
+    "category": "Mandatory Sign",
+    "korean_category": "지시표지",
+    "title": "Disabled Protection",
+    "korean_title": "장애인보호(장애인보호구역안",
+    "image_src": "https://upload.wikimedia.org/wikipedia/commons/d/de/South_Korea_road_sign_324-2.svg",
+    "summary": "노인, 어린이 및 장애인의 통행로 있는 경우에는 「어린이·노인 및 장애인 보호구역 지정 및 관리에 관한 규칙」에 의거하여 보호구역 지정대상시설의 주 출입문을 중심으로 반경 300m 이내의 도로 중 일정구간을 보호구역으로 지정한다. "
+  },
+  {
+    "index": 103,
+    "class_category": "309-2",
+    "category": "Mandatory Sign",
+    "korean_category": "지시표지",
+    "title": "Turn Left and U Turn",
+    "korean_title": "좌회전 및 유턴표지",
+    "image_src": "https://ko.wikipedia.org/wiki/%EB%8C%80%ED%95%9C%EB%AF%BC%EA%B5%AD%EC%9D%98_%EA%B5%90%ED%86%B5%ED%91%9C%EC%A7%80#/media/%ED%8C%8C%EC%9D%BC:South_Korea_road_sign_309-2.svg",
+    "summary": "교차로에서 좌회전 및 유턴을 지시할 때는 좌회전 또는 유턴 할 지점의 도로 우측 또는 중앙에 해당하는 지시표지를 설치한다."
+  },
+  {
+    "index": 104,
+    "class_category": "138-2",
+    "category": "Attention Sign",
+    "korean_category": "주의표지",
+    "title": "Bridge",
+    "korean_title": "교량표지",
+    "image_src": "https://upload.wikimedia.org/wikipedia/commons/1/15/South_Korea_road_sign_138-2.svg",
+    "summary": "차량의 진행방향 전방에 교량이 있는 경우에 설치한다. 설치 위치는 교량이 있는 지점으로부터 전방 50~200m 범위내 도로 우측에 설치한다."
+  },
+  {
+    "index": 105,
+    "class_category": "303-2",
+    "category": "Mandatory Sign",
+    "korean_category": "지시표지",
+    "title": "Tram Only",
+    "korean_title": "노면전차 전용도로",
+    "image_src": "https://upload.wikimedia.org/wikipedia/commons/3/37/South_Korea_road_sign_303-2.svg",
+    "summary": "노면전차만 통행할 수 있는 전용도로의 구간 또는 장소내의 필요한 지점에 설치한다. 노면전차전용도로표지는 노면전차 전용도로의 구간이 시작되는 지점에 구간시작(417)의 보조표지와 함께 설치하고, 끝나는 지점에 구간끝(419) 또는 해제(427)의 보조표지를 함께 설치한다. 설치장소는 필요한 지점 양측에 설치한다."
+  },
+  {
+    "index": 106,
+    "class_category": "110-2",
+    "category": "Attention Sign",
+    "korean_category": "주의표지",
+    "title": "Tram",
+    "korean_title": "노면전차",
+    "image_src": "https://upload.wikimedia.org/wikipedia/commons/e/ef/South_Korea_road_sign_110-2.svg",
+    "summary": "모든 철길 건널목이 있는 곳에 설치한다. 철길 건널목이 있으나 시인이 곤란하여 도로 사용자의 주의를 환기시킬 필요가 있는 장소에 설치한다. 또한 주행속도가 높은 구간에는 적당한 간격으로 중복하여 설치하며, 필요한 경우에는 거리(402) 보조표지를 함께 설치한다."
   }
 ]
